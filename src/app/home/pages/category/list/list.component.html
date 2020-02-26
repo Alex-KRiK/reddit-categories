@@ -1,0 +1,55 @@
+<div class="category-list">
+    <div class="category-list__header category-list__row">
+        <mat-list class="category-list__row--top">
+            <mat-list-item class="save col"></mat-list-item>
+            <mat-list-item class="image col">Image</mat-list-item>
+            <mat-list-item class="title col">Title</mat-list-item>
+            <mat-list-item class="score col">Score</mat-list-item>
+            <mat-list-item class="posted col">Posted by</mat-list-item>
+            <mat-list-item class="comments col">Comments</mat-list-item>
+            <mat-list-item class="created col">created</mat-list-item>
+            <mat-list-item class="link col">Link</mat-list-item>
+        </mat-list>
+    </div>
+
+    <div class="category-list__body category-list__row">
+        <div class="no-data" *ngIf="!getArticles().length">
+            <span>No data</span>
+        </div>
+        <mat-list>
+            <mat-list-item *ngFor="let article of getArticles()">
+                <button 
+                    mat-button
+                    class="save col"
+                    [ngClass]="{'saved': article.saved}"
+                    (click)="saveArticle(article)"
+                >{{article.saved ? 'Saved' : 'Save'}}</button>
+                <div class="center" (click)=openArticle(article)>
+                    <div class="image-box">
+                        <img 
+                            class="image-box__image col"
+                            [ngClass]="{ 'no-image':  article.thumbnail === 'self' || article.thumbnail === 'default'}"
+                            [src]="article.thumbnail" alt="" matListAvatar
+                        >
+                        <div *ngIf="article.thumbnail === 'self' || article.thumbnail === 'default'">No image</div>
+                    </div>
+                    <div class="title col">{{ article.title }}</div>
+                    <div class="score col">{{ article.score }}</div>
+                    <div class="posted col">{{ article.author }}</div>
+                    <div class="comments col">{{ article.coments }}</div>
+                    <div class="created col">{{ article.created | date: 'dd.MM.yyyy' }}</div>
+                </div>
+                <a class="link col" href="{{baseUrl + article.permalink}}">link</a>
+            </mat-list-item>
+        </mat-list>
+        <mat-paginator
+            class="category-list__body--bottom"
+            #paginator
+            [length]="pageOptions.length"
+            [pageSize]="pageOptions.pageSize"
+            [pageSizeOptions]="PAGINATION_OPTIONS"
+            (page)="changePage($event)"
+        >
+        </mat-paginator>
+    </div>
+</div>

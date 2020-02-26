@@ -1,0 +1,41 @@
+.header-container {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 30px;
+    flex-wrap: wrap;
+    background: rgb(77,131,87, 0.5);
+
+    li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+    }
+
+    button {
+        width: 100%;
+        font-family: Tahoma;
+        border: 1px solid rgba(77, 131, 87);
+        color: white;
+        font-size: 19px;
+        color: white;
+        margin: 7px;
+
+        &.active {
+            background-color: rgb(77,131,87);
+        }
+    }
+
+    button:active {
+        background-color: rgb(77,131,87);
+    }
+
+    .first {
+        margin-left: 0;
+    }
+
+    .last {
+        margin-right: 0;
+    }
+}

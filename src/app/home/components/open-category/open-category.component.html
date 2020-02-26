@@ -1,0 +1,27 @@
+<div class="open-container">
+    <div class="open-wrapper">
+        <div class="open-wrapper__title open-wrapper__row">
+            Enter any sub reddit url, please!
+        </div>
+        <div class="open-wrapper__body open-wrapper__row">
+            <mat-form-field  class="open-wrapper__body--left">
+                <input 
+                    matInput
+                    placeholder="enter URL"
+                    type="text"
+                    [formControl]="enteredUrl">
+            </mat-form-field>
+            <button 
+                mat-button
+                class="open-wrapper__body--right"
+                (click)="openCategory()">Show
+            </button>
+        </div>
+        <div class="open-wrapper__bottom open-wrapper__row">
+            <span>Or you can choose one of the following:</span>
+            <div (click)="openCategory('https://www.reddit.com/r/CozyPlaces.json')">Places</div>
+            <div (click)="openCategory('https://www.reddit.com/r/findfashion.json')">Fashion</div>
+            <div (click)="openCategory('https://www.reddit.com/r/wildlifephotography.json')">Wild life photo</div>
+        </div>
+    </div>
+</div>

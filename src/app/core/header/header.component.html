@@ -1,0 +1,6 @@
+<ul class="header-container">
+    <li><button [routerLink]="['/category/list']" [routerLinkActive]="'active'" class="first" mat-button>List of articles</button></li>
+    <li><button [routerLink]="['/category/saved']" [routerLinkActive]="'active'" mat-button>Saved articles</button></li>
+    <li><button [routerLink]="['/open-category']" mat-button>Change sub reddit</button></li>
+    <li><button (click)="logOut()" class="last" mat-button>LogOut</button></li>
+</ul>

@@ -1,0 +1,95 @@
+.article {
+    border: 30px solid rgb(77, 131, 87, 0.5);
+    border-top: 0;
+    
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        &--top {
+            display: flex;
+
+            span {
+                padding: 0 10px;
+                color: #8E969F;;
+            }
+        }
+
+        &--center {
+            .title {
+                margin-bottom: 10px;
+                font-size: 30px;
+                font-family: Tahoma;
+                text-align: center;
+            }
+
+            &.image-box {
+                display: flex;
+                justify-content: center;
+                max-width: 900px;
+                max-height: 900px;
+
+                img {
+                    max-width: 65%;
+                    max-height: 65%;
+                }
+            }
+        }
+
+        &--bottom {
+            display: flex;
+            width: 100%;
+            padding-left: 25px;
+            font-size: 20px;
+    
+            span {
+                padding: 15px 3px;
+                color: #8E969F;;
+            }
+        }
+
+        .selftext {
+            margin: 0 40px 25px;
+        }
+    }
+
+    &__comments {
+        &--top {
+            span {
+                padding-right: 5px;
+                color: #8E969F;;
+            }
+
+        }
+
+        &--center {
+            font-size: 20px;
+        }
+
+        li {
+            .body {
+                padding-bottom: 15px;
+            }
+
+            .top{
+                padding-bottom: 15px;
+            }
+        }
+
+        mat-tree-node {
+            padding-bottom: 15px;
+        }
+    }
+}
+
+.tree-invisible {
+    display: none;
+  }
+  
+  .tree ul,
+  .tree li {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+  }
